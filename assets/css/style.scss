@@ -1,0 +1,226 @@
+
+@font-face {
+    font-family: 'gt_walsheim_trialbold';
+    src: url('./fonts/gt-walsheim-pro-trial-bold-webfont.woff2') format('woff2'),
+         url('./fonts/gt-walsheim-pro-trial-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+$display   : 'gt_walsheim_trialbold','Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$gray      : #636c72;
+$white     : #ffffff;
+$pink      : #E73C7E;
+$orange    : #EE7752;
+$blue      : #23A6D5;
+$purple    : #af5a96;
+
+
+
+* {
+  box-sizing: border-box;
+  box-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: $display;
+  letter-spacing: -0.4rem;
+  padding: 2rem 0 1rem 0;
+}
+
+
+
+
+
+.header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  .display-1 {
+    color: $white;
+    white-space:nowrap;
+  }
+
+  .accent {
+    display: inline-block;
+    color: $pink;
+
+    animation: Cycler 15s ease infinite;
+
+    @-webkit-keyframes Cycler {
+    	0% {
+    		color: $pink
+    	}
+    	50% {
+    		color: $orange
+    	}
+    	100% {
+    		color: $pink
+    	}
+    }
+
+  }
+} 
+
+.rating {
+  text-transform: uppercase;
+  color: $white;
+
+  .btn-group {
+    font-size: 1rem !important;
+    vertical-align: baseline;
+    cursor: pointer;
+    border-color: $white;
+    margin-left: .5rem;
+  }
+
+}
+
+.buttons {
+  margin: 1rem 0;
+
+  label>input {
+    cursor: pointer !important;
+  }
+
+  button {
+    margin: .5rem 1rem .5rem 0;
+    border: 1px solid $white;
+    background-color: transparent;
+
+    &:hover, &:active {
+      background-color: $white;
+      border-color: $white;
+      color: $pink;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.form-control {
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: $white;
+  border-color: $white;
+  transition: all .5s linear;
+
+  &:focus {
+    border: 1px solid $white;
+    background-color: rgba($white, .5);
+  }
+
+  &::-webkit-input-placeholder {
+    color: rgba($white, .5);
+  }
+}
+
+.gifs {
+  padding-top: 2rem;
+
+  .card {
+    border: none;
+    background-color: transparent;
+
+    img {
+      cursor: pointer;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .card-block {
+      background-color: $white;
+      padding: .75rem 1.25rem;
+      font-size: .85rem;
+
+      a {
+        display: inline-block;
+        margin-right: 1rem;
+        font-size: .9rem;
+        transition: color .2s linear;
+
+        &:hover {
+          text-decoration: none;
+          color: $pink;
+        }
+
+        i {
+          margin-right: .3rem;
+        }
+      }
+    }
+
+    .card-footer {
+      background-color: rgba($white, .2);
+      color: rgba($white, .8) !important;
+      border: none;
+      padding: .35rem 1.25rem;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+
+.btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+  background-color: lighten($pink, 10%) !important;
+  border-color: lighten($pink, 10%) !important;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-secondary {
+  font-size: 1rem;
+  cursor: pointer;
+  border-color: white;
+
+  .active, .focus {
+    box-shadow: none;
+    border-color: white;
+    background-color: $blue !important;
+    color: $white;
+  }
+  &:hover {
+    border-color: white;
+  }
+}
+
+.btn-secondary.active {
+  box-shadow: none;
+  background-color: $blue !important;
+  color: $white;
+  border-color: white;
+}
